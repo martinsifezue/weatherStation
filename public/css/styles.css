@@ -1,0 +1,73 @@
+h1{
+  font-family: 'Old Standard TT', cursive;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+body{
+  text-align: center;
+  background: #D3CEDF;
+   font-family: 'Crimson Text', serif;
+}
+#title{
+  color: #D3CEDF;
+  padding: 5% 5%;
+  background: #774360;
+
+}
+#input{
+  color: #774360;
+ padding: 5%;
+
+}
+.title-img{
+width: 30%;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+
+input{
+  margin-top: 1.5rem;
+  height: 60px;
+}
+
+h2{
+  font-family: 'Crimson Text', serif;
+  line-height: 1.5;
+
+}
+.label{
+  font-size: 1.2rem;
+}
+.btn{
+  width: 200px;
+  margin: 2rem 0;
+  background-color: #774360;
+  color: #D3CEDF;
+}
+
+.results{
+  width: 400px;
+ font-size: 1.2rem;
+  background-color: #774360;
+  color: #D3CEDF;
+  padding: 3%;
+  margin: auto;
+
+
+}
+.results-img{
+  width: 30%;
+  margin: 10% 0;
+}
+.temp{
+  margin-bottom: 10%;
+}
+
+.error-img{
+  width: 30%;
+  margin: 12% 0;
+}
