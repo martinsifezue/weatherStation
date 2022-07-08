@@ -36,11 +36,15 @@ input{
 
 h2{
   font-family: 'Crimson Text', serif;
-  line-height: 1.5;
+  line-height: 1;
 
 }
 .label{
   font-size: 1.2rem;
+}
+.myresults{
+
+  
 }
 .btn{
   width: 200px;
@@ -48,7 +52,9 @@ h2{
   background-color: #774360;
   color: #D3CEDF;
 }
-
+.time{
+  font-size: 1rem;
+}
 .results{
   width: 400px;
  font-size: 1.2rem;
@@ -56,18 +62,37 @@ h2{
   color: #D3CEDF;
   padding: 3%;
   margin: auto;
+  text-align:left;
 
 
 }
+.test{
+  border-right: 1px solid #D3CEDF;
+  height: 100px;
+  
+  
+
+}
+td, th {    
+  text-align: left;
+  padding: 8px;
+}
+
 .results-img{
-  width: 30%;
-  margin: 10% 0;
+  width: 20%;
+ display: inline-block;
+ 
+  
 }
 .temp{
-  margin-bottom: 10%;
+margin:0%;
+padding:0%;
+  display:inline-block;
 }
 
 .error-img{
   width: 30%;
   margin: 12% 0;
 }
+
+

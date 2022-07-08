@@ -36,11 +36,25 @@ console.log(fullweatherdata.cod);
 
 if(fullweatherdata.cod === 200){
 
-  let temp = fullweatherdata.main.temp
+  let temp = Math.round(fullweatherdata.main.temp)
   let desc = fullweatherdata.weather[0].description
   let icon = fullweatherdata.weather[0].icon
   let imgUrl = "https://openweathermap.org/img/wn/"+ icon + "@2x.png"
   let city = fullweatherdata.name
+  let feels_like = Math.round(fullweatherdata.main.feels_like)
+  let country = fullweatherdata.sys.country
+  let humidity = fullweatherdata.main.humidity
+  let timestamp = fullweatherdata.dt
+  let timezone = fullweatherdata.timezone
+  let date = new Date(timestamp * 1000 + (timezone * 1000));
+  let month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  let realmonth = month[date.getMonth()];
+  let day = date.getDate();
+  let hours = date.getHours();
+  let mins = "0"+ date.getMinutes();
+
+  let time = realmonth + " " + day + ", " + hours + ":" + mins.substr(-2) ;
+  
 
 
 
@@ -110,14 +124,23 @@ res.write(`
         </main>
       </div>
       <div class="col-lg-6 results">
-        <div class="">
-  <h3>${city}</h3>
-  <img src="${imgUrl}" class="results-img" alt="Weather Icon">
-  <p class="temp"><em>${temp} °C</em></p>
-  <p>${desc.toUpperCase()}</p>
+        <div class="myresults">
+        
+<p class="time">${time}</p>
+<h3>${city}, ${country}</h3>
 
+<p>Feels like ${feels_like} ° C. ${desc.charAt(0).toUpperCase() + desc.slice(1)}</p>
+       <table>
+<tr>
+<td class="test">
+<img src="${imgUrl}">
+<p class="temp">${temp} ° C</p>
+</td>
+<td>Humidity: ${humidity}%</td>
 
+</tr>
 
+</table>
 
 
         </div>
