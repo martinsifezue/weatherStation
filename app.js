@@ -17,13 +17,13 @@ app.post("/", function(req, res){
 
 let query = req.body.cityname;
 let units = "metric";
+let apiKey = "d72e72421b5d01c17aa8c943e9edf932";
 
 
 
 
 
-
-const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appID=" + process.env.MY_API_KEY + "&units=" + units;
+const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appID=" + apiKey + "&units=" + units;
 
 https.get(url, function(response){
 
@@ -95,7 +95,7 @@ res.write(`
         <main class="form-signin w-100 m-auto">
           <form action="/" method="post">
 
-            <h2 class="h3 mb-3 fw-normal">Check Weather Conditions</h2>
+            <h2 class="h3 mb-3 fw-normal">Try Another City ?</h2>
 
             <div >
               <input type="text" class="form-control"  name=cityname placeholder= ${query} >
@@ -104,7 +104,7 @@ res.write(`
 
 
 
-            <button class="btn btn-lg" type="submit">Check</button>
+            <button class="btn btn-lg" type="submit">Check Weather</button>
 
           </form>
         </main>
@@ -114,7 +114,7 @@ res.write(`
   <h3>${city}</h3>
   <img src="${imgUrl}" class="results-img" alt="Weather Icon">
   <p class="temp"><em>${temp} °C</em></p>
-  <p>${desc}</p>
+  <p>${desc.toUpperCase()}</p>
 
 
 
@@ -200,7 +200,7 @@ res.write(`
         <main class="form-signin w-100 m-auto">
           <form action="/" method="post">
 
-            <h2 class="h3 mb-3 fw-normal">Check Weather Conditions</h2>
+            <h2 class="h3 mb-3 fw-normal">Try another City ?</h2>
 
             <div >
               <input type="text" class="form-control"  name=cityname placeholder= ${query}>
@@ -209,17 +209,18 @@ res.write(`
 
 
 
-            <button class="btn btn-lg" type="submit">Check</button>
+            <button class="btn btn-lg" type="submit">Check Weather</button>
 
           </form>
         </main>
       </div>
       <div class="col-lg-6 results">
         <div class="">
-  <h2>City not found</h2>
+  <h2>Aw Aw!</h2>
   <img src="./images/404.jpg" class="error-img" alt="ERROR">
 
-  <p>Please Check the City you entered again</p>
+  <p>Data not available for the location you entered.</p>
+  <p>Please try another City</p>
 
 
 
